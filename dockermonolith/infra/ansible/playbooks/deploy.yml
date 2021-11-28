@@ -1,0 +1,26 @@
+
+---
+- name: Deploy app in docker
+  hosts: all
+  become: true
+  tasks:
+    - name: Docker install
+      apt:
+        name:
+          - docker.io
+          - python3-docker
+        state: present
+        update_cache: yes
+
+    - name: Deploy container
+      docker_container:
+        name: reddit
+        image: gogen120/otus-reddit:1.0
+        state: started
+        restart: true
+        recreate: true
+        restart_policy: always
+        container_default_behavior: compatibility
+        ports:
+          - "9292:9292"
+          
