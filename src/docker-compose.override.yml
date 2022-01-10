@@ -1,9 +1,0 @@
-services:
-  ui:
-    volumes:
-      - ./ui:/app
-    command: "puma --debug -w 2"
-  comment:
-    volumes:
-      - './coment:/app'
-    command: "puma --debug -w 2"

@@ -21,3 +21,8 @@ Gogen120 microservices repository
 * Добавил terraform манифесты для создания VM
 * Добавил ansible плейбуки для уствановки докера и gitlab-а
 * Добавил gitlab ci пайплайн для сборки, тестирования и деплоя на различные окружения
+
+## Monitoring
+* Описал в `docker-compose` файле `prometheus`, `node-exporter`, `mongodb-exporter` и `blackbox-exporter`
+* Запушил образы микросервисов, прометеуса и экспортеров в [docker-hub](https://hub.docker.com/u/gogen120)
+* Добавил `Makefile` для сборки образов (build) и их пуша в docker-hub (push)
