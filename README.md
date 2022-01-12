@@ -26,3 +26,11 @@ Gogen120 microservices repository
 * Описал в `docker-compose` файле `prometheus`, `node-exporter`, `mongodb-exporter` и `blackbox-exporter`
 * Запушил образы микросервисов, прометеуса и экспортеров в [docker-hub](https://hub.docker.com/u/gogen120)
 * Добавил `Makefile` для сборки образов (build) и их пуша в docker-hub (push)
+
+## Logging
+* Добавил контейнеры для логирования приложения (`elasticsearch`, `kibana`, `fluentd`)
+* Подключил логирование для микросервисов reddit-а
+* Добавил парсинг логов для `post` сервиса и для `ui` сервиса
+* Добавил сервис для распределенного трейсинга (`zipkin`)
+* Подключил `zipkin` для микросервисов reddit-а
+* Проанализировал приложение со сломанным кодом с помощью `zipkin`: проблема заключается в вызове `time.sleep(3)` в функции `find_post` в `post` микросервисе
