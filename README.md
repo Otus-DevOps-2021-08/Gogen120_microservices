@@ -44,3 +44,10 @@ Gogen120 microservices repository
 * Использовал `minikube` для локального развертывания приложения в k8s
 * Использовал Managed Service for Kubernetes от яндекса для развертывания приложения
 * Добавил terraform манифест для создания кластера k8s
+
+## Kubernetes 3
+* Разобрался с сетевым взаимодействием внутри кубернетес (service, dns-kube, load balancer, ingress)
+* Установил ingress в кубернетес с помощью команды `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/cloud/deploy.yaml`
+* Настроил использование TLS, создал для этого сертификаты
+* Добавил NetworkPolicy
+* Добавил PersistentVolume для базы
